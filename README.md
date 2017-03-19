@@ -7,4 +7,11 @@
 -  source virtualEnvironmentName/bin/activate
 -  virtualEnvironment is not active.
 -  ./manage.py runserver will run the django test server
+-  View in browser @ http://127.0.0.1:8000/
 
+"   Django is built using a series of Apps which is essentially a feature group of an entire site
+    This code is sampled from book called Django Unleashed
+    It currently lists a series of apps that have relevant models classified under Blog, Tag, and Startups
+    You can take a look into each one of these app directories and go to the models file to view each model.
+
+"
