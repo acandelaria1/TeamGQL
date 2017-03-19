@@ -61,6 +61,16 @@ class TagDelete(ObjectUpdateMixin, View):
     success_url = reverse_lazy('organizer_tag_list')
     template_name = 'organizer_tag_confirm_delete.html'
 
+class TagList(View):
+    template_name = 'organizer/tag_list.html'
+
+    def get(self, request, page_number=None):
+        tags = Tag.objects.all()
+        context = {
+            'tag_list': tags,
+        }
+        return render(request, self.template_name, context)
+
 class StartupCreate(ObjectCreateMixin, View):
     form_class =  StartupForm
     template_name = 'organizer/startup_form.html'
@@ -127,8 +137,8 @@ def tag_create(request):
         form = TagForm()
     return render(request, 'organizer/tag_form.html', {'form':form})
 
-def tag_list(request):
-    return render(request, 'organizer/tag_list.html', {'tag_list':Tag.objects.all()})
+#def tag_list(request):
+#    return render(request, 'organizer/tag_list.html', {'tag_list':Tag.objects.all()})
 
 def tag_detail(request, slug):
     tag = get_object_or_404(Tag, slug__iexact=slug)
