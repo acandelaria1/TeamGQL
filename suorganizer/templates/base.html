@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+            Startup Organizer
+            {% endblock %}
+        </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, intial-scale=1">
+        <!--[if IE]><script
+            src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+            </script><![endif]-->
+    </head>
+
+    <body>
+        <div><!-- container -->
+            <header>
+                <h1>Startup Organizer</h1>
+            </header>
+            <main>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'blog_post_list' %}">
+                            Blog</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'organizer_startup_list' %}">
+                        Startups</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'organizer_tag_list' %}">
+                            Tags</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">
+                            Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            {% if messages %}
+                <div>
+                    <div>
+                        <ul>
+                            {% for message in messages %}
+                                {% if message.tags %}
+                                    <li class="{{ message.tags }}">
+                                {% else %}
+                                    <li>
+                                {% endif %}
+                            {% endfor %}
+            {% endif %}
+            <main>
+                {% block content %}
+                This is default content!
+                {% endblock %}
+            </main>
+        </div><!--container -->
+
+        <footer>
+            <p>
+                &copy; 2015
+                <a href="https://AndrewsForge.com/">
+                    Alexis Candelaria</a>
+            </p>
+            <p>
+                Created for
+                    <a href="https://Django-Unleashed.com/">
+                        Django Unleashed</a>
+            </p>
+        </footer>
+
+    </body>
+<html>

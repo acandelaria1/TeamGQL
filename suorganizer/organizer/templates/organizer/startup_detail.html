@@ -1,0 +1,66 @@
+<article>
+    
+    <h2>{{ startup.name }}</h2>
+    <ul>
+        <li>
+            <a href="{{ tag.get_update_url }}">
+                Edit Tag</a></li>
+        </li>
+    </ul>
+    <dl>
+        <dt>Date Founded</dt>
+            <dd>{{ startup.founded_date }}</dd>
+        <dt>Website</dt>
+            <dd>{{ startup.website }}</dd>
+        <dt>Contact</dt>
+            <dd>{{ startup.contact }}</dd>
+            <dt>Tag{{ startup.tags.count|pluralize }}</dt>
+                {% for tag in startup.tags.all %}
+                <dd><a href="">
+                    {{ tag.name|title}}
+                </a></dd>
+                {% endfor %}
+    </dl>
+
+    {{ startup.description|linebreaks }}
+        
+        {% if startup.newslink_set.all %}
+            <section>
+                <h3>Recent News</h3>
+                <ul>
+                    {% for newslink in startup.newslink.all %}
+                    <li>
+                        <a href="{{ newslink.link }}">
+                                {{ newslink.title|title }}</a>
+                    </li>
+                    <ul>
+                        <li>
+                            <a href="{{ newslink.get_update_url }}">
+                            Edit Link</a></li>
+                        <li>
+                            <a href="{{ newslink.get_delete_url }}">
+                                Delete Link</a></li>
+                    </ul>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+        <p>
+            <a href="{% url 'organizer_newslink_create' %}">
+                Add Article</a></p>
+    
+        {% if startup.blog_posts.all %}
+            <section>
+                <h3>Blog Post{{ startup.blog_posts.count|pluralize }}</h3>
+                <ul>
+                    {% for post in startup.blog_posts.all %}
+                        <li>
+                            <a href="">
+                                {{ post.title|title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+
+<article>

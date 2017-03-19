@@ -1,0 +1,45 @@
+{% extends parent_template|default:"blog/base_blog.html" %}
+
+{% block title %}
+{{ block.super }} - Blog
+{% endblock %}
+
+{% block content %}
+<div>
+    <a href="{% url 'blog_post_create' %}">
+        Write New Blog Post</a>
+</div>
+{% for post in post_list %}
+    <article>
+        <header>
+            <h2>
+                <a href="{{ post.get_absolute_url }}">
+                    {{ post.title|title }}</a>
+            </h2>
+            <ul>
+                <li>
+                    <a href="{{ post.get_update_url }}">
+                    Edit Post</a></li>
+                </li>
+                <li>
+                    <a href="{{ post.get_delete_url }}">
+                    Delete Post</a>
+                </li>
+            <ul>
+            <p>
+                Written on:
+                <time datetime="{{ post.pub_date|date:"Y-m-d" }}">
+                    {{ post.pub_date|date:"l, F j, Y" }}
+                </time>
+            </p>
+        </header>
+        <p>{{ post.text|truncatewords:20 }}</p>
+        <p>
+            <a href="{{ post.get_absolute_url }}">
+            Read more&hellip;</a>
+        </p>
+    </article>
+    {% empty %}
+        <p><em>No Blog Posts Available</em></p>
+    {% endfor %}
+{% endblock %}

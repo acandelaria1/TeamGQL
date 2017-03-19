@@ -1,0 +1,21 @@
+{% extends parent_template|default:"organizer/base_organizer.html" %}
+
+{% block title %}
+{{block.super}} - Create Tag
+{% endblock %}
+
+{% block content %}
+    <div>
+        <div>   
+            <form
+                action="{% url 'organizer_tag_create' %}"
+                method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">
+                    Create Tag</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
