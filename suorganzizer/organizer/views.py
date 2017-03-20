@@ -71,6 +71,11 @@ class TagList(View):
         }
         return render(request, self.template_name, context)
 
+class TagPageList(View):
+    template_name = 'organizer/tag_list.html'
+    
+    def get(self, request, page_number):
+        
 class StartupCreate(ObjectCreateMixin, View):
     form_class =  StartupForm
     template_name = 'organizer/startup_form.html'
