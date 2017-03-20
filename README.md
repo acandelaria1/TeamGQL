@@ -9,6 +9,9 @@
 -  ./manage.py runserver will run the django test server
 -  View in browser @ http://127.0.0.1:8000/
 
+    There are many graphql libraries for python but this project will use a python graphene integration
+    viewable here at https://github.com/graphql-python/graphene-django/
+
     Django is built using a series of Apps which is essentially a feature group of an entire site
     This code is sampled from book called Django Unleashed
     It currently lists a series of apps that have relevant models classified under Blog, Tag, and Startups
