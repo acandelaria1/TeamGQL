@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.flatpages',
     'django.contrib.sites',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddlewware',
     'organizer',
     'blog',
     'contact',
