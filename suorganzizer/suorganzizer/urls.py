@@ -19,7 +19,7 @@ from organizer.urls import newslink as newslink_urls, startup as startup_urls, t
 from blog import urls as blog_urls
 from contact import urls as contact_urls
 from .views import redirect_root
-from django.contrib.flatpages import urls as flatpages_urls
+from django.contrib.flatpages import urls as flatpage_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^blog/', include(blog_urls)),
     url(r'^$', redirect_root),
     url(r'^contact/', include(contact_urls)),
-    url(r'^page', include(flatpages_urls)),
+    url(r'^', include(flatpage_urls)),
 ]
