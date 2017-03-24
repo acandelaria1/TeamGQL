@@ -1,6 +1,7 @@
 # TeamGQL
 
 -  pip install django
+-  sudo easy_install pip
 -  pip install virtualenv
 -  cd to project directory
 -  virtualenv virtualEnvironmentName ... I chose suorgenv for my name
