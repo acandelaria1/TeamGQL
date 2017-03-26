@@ -17,3 +17,8 @@ class NewsLink(DjangoObjectType):
     class meta:
         model = NewsLinkModel
 
+class Query(graphene.AbstractType):
+    
+    all_tags = graphene.List(Tag)
+    all_startups = graphene.List(Startup)
+    all_newslinks = graphene.List(NewsLink)
