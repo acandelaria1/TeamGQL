@@ -12,17 +12,3 @@ class Post(DjangoObjectType):
     class meta:
         model = PostModel
 
-class Tag(DjangoObjectType):
-    
-    class meta:
-        model = TagModel
-
-class Startup(DjangoObjectType):
-    
-    class meta:
-        model = StartupModel
-
-class NewsLink(DjangoObjectType):
-    
-    class meta:
-        model = NewsLinkModel
