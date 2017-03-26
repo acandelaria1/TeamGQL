@@ -29,5 +29,6 @@ urlpatterns = [
     url(r'^blog/', include(blog_urls)),
     url(r'^$', redirect_root),
     url(r'^contact/', include(contact_urls)),
+    url(r'^graphql', GraphQLView.as_view(graphiql=True)),
     url(r'^', include(flatpage_urls)),
 ]
