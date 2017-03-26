@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     'organizer',
     'blog',
     'contact',
+    'graphene_django',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'app.schema.schema' # Where your Graphene schema lives
+    }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
