@@ -20,6 +20,7 @@ from blog import urls as blog_urls
 from contact import urls as contact_urls
 from .views import redirect_root
 from django.contrib.flatpages import urls as flatpage_urls
+from graphene_django.views import GraphQLView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
