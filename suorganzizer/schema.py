@@ -1,11 +1,10 @@
 import graphene
-from graphene import Schema, relay, resolve_only_args
-from graphene_django import DjangoConnectionField, DjangoObjectType
+import suorganizer.blog.schema
+import suorganizer.organizer.schema
 
-from blog.models import Post as PostModel
 
-class Post(DjangoObjectType):
-    
-    class meta:
-        model = PostModel
+class Query(suroganizer.blog.schema, suorganizer.organizer.schema, graphene.ObjectType):
+    pass
+
+schema = graphene.Schema(query=Query)
 
