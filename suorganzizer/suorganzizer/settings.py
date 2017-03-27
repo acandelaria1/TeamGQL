@@ -48,7 +48,7 @@ INSTALLED_APPS = [
 ]
 
 GRAPHENE = {
-    'SCHEMA': 'suorganzizer.schema' # Where your Graphene schema lives
+    'SCHEMA': 'suorganzizer.schema.schema' # Where your Graphene schema lives
     }
 
 MIDDLEWARE = [
