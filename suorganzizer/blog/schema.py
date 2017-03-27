@@ -6,7 +6,7 @@ from blog.models import Post as PostModel
 
 class Post(DjangoObjectType):
     
-    class meta:
+    class Meta:
         model = PostModel
 
 class Query(graphene.AbstractType):

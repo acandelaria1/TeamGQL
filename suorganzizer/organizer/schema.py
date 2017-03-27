@@ -6,15 +6,15 @@ from organizer.models import Startup as StartupModel
 from organizer.models import NewsLink as NewsLinkModel
 
 class Tag(DjangoObjectType):
-    class meta:
+    class Meta:
         model = TagModel
 
 class Startup(DjangoObjectType):
-    class meta:
+    class Meta:
         model = StartupModel
 
 class NewsLink(DjangoObjectType):
-    class meta:
+    class Meta:
         model = NewsLinkModel
 
 class Query(graphene.AbstractType):
